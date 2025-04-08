@@ -1,0 +1,21 @@
+﻿campaign_id,campaign_name,start_date,end_date,clicks,impressions,conversion_rate,survey_score,survey_comments
+C001,Promoție de vară,2023-06-01,2023-06-30,12000,150000,4.5,8.7,Campanie de succes, feedback pozitiv
+C002,Lansare produs nou,2023-07-05,2023-07-20,8000,100000,3.8,7.9,Interes ridicat, dar conversii scăzute
+C003,Reduceri toamnă,2023-09-01,2023-09-30,15000,180000,5.0,9.1,Reduceri atractive, rezultate excelente
+C004,Black Friday,2023-11-20,2023-11-27,50000,600000,10.0,9.5,Campanie record, foarte bine primită
+C005,Campanie de iarnă,2023-12-01,2023-12-31,20000,250000,6.2,8.3,Feedback pozitiv din partea clienților
+C006,Start de an,2024-01-01,2024-01-15,11000,130000,4.2,8.0,Lansare bună, dar se poate îmbunătăți conversia
+C007,Ofertă specială,2024-02-01,2024-02-28,9000,120000,3.5,7.5,Rezultate moderate, optimizare necesară
+C008,Campanie primăvară,2024-03-10,2024-03-31,13000,160000,4.8,8.8,Feedback bun, clienții au apreciat promoțiile
+C009,Eveniment exclusiv,2024-04-05,2024-04-15,7000,95000,3.9,8.2,Campanie de nișă, performanță bună
+C010,Ofertă flash,2024-05-01,2024-05-03,5000,70000,2.5,7.0,Eveniment de scurtă durată, impact redus
+C011,Super reduceri,2024-05-15,2024-05-31,18000,210000,5.3,8.9,Campanie foarte bine coordonată
+C012,Promoție exclusivă,2024-06-01,2024-06-15,9500,110000,4.0,8.1,Oferte unice, clienții au fost entuziasmați
+C013,Campanie de fidelizare,2024-06-20,2024-07-05,8000,90000,3.2,7.8,Campanie de loialitate, rezultate constante
+C014,Ofertă de weekend,2024-07-10,2024-07-11,6000,80000,3.0,7.2,Promoție scurtă, dar eficientă
+C015,Campanie social media,2024-07-20,2024-08-10,22000,270000,6.5,9.0,Interacțiune excelentă pe rețelele sociale
+C016,Campanie influencer,2024-08-15,2024-08-31,14000,170000,4.7,8.6,Colaborare de succes cu influenceri
+C017,Reduceri finale,2024-09-15,2024-09-30,16000,200000,5.8,9.2,Ultima șansă de reduceri, feedback pozitiv
+C018,Campanie de revenire,2024-10-01,2024-10-15,10000,130000,4.3,8.0,Clienți reveniți, performanță constantă
+C019,Ofertă exclusivă VIP,2024-10-20,2024-10-27,7500,95000,3.6,8.4,Targetare exclusivă, rezultate bune
+C020,Campanie specială,2024-11-05,2024-11-20,19000,230000,5.1,8.7,Campanie bine primită, impact notabil

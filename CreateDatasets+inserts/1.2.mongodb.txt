@@ -1,0 +1,298 @@
+
+===================================================================================
+SCRIPT MONGODB
+===================================================================================
+// Se selectează baza de date
+use ecommerce;
+
+// Ștergem colecțiile dacă există
+db.feedback.drop();
+db.user_interactions.drop();
+
+// Inserare în colecția "feedback" (20 de documente)
+db.feedback.insertMany([
+  {
+    customer_id: 1,
+    order_id: 1,
+    product_id: 1,
+    rating: 5,
+    comment: "Produs excelent, livrare rapidă.",
+    feedback_date: ISODate("2023-06-02T10:00:00Z")
+  },
+  {
+    customer_id: 2,
+    order_id: 2,
+    product_id: 2,
+    rating: 4,
+    comment: "Calitate bună, dar ambalajul ar putea fi mai bun.",
+    feedback_date: ISODate("2023-06-03T11:00:00Z")
+  },
+  {
+    customer_id: 3,
+    order_id: 3,
+    product_id: 1,
+    rating: 3,
+    comment: "Produsul este ok, însă așteptam mai mult.",
+    feedback_date: ISODate("2023-06-04T09:00:00Z")
+  },
+  {
+    customer_id: 4,
+    order_id: 4,
+    product_id: 3,
+    rating: 4,
+    comment: "O experiență bună, recomand.",
+    feedback_date: ISODate("2023-06-05T14:00:00Z")
+  },
+  {
+    customer_id: 5,
+    order_id: 5,
+    product_id: 4,
+    rating: 5,
+    comment: "Impresionant, 100% mulțumit!",
+    feedback_date: ISODate("2023-06-06T16:00:00Z")
+  },
+  {
+    customer_id: 6,
+    order_id: 6,
+    product_id: 5,
+    rating: 4,
+    comment: "Produs conform așteptărilor.",
+    feedback_date: ISODate("2023-06-07T08:30:00Z")
+  },
+  {
+    customer_id: 7,
+    order_id: 7,
+    product_id: 6,
+    rating: 3,
+    comment: "Calitate medie.",
+    feedback_date: ISODate("2023-06-08T12:15:00Z")
+  },
+  {
+    customer_id: 8,
+    order_id: 8,
+    product_id: 7,
+    rating: 4,
+    comment: "Foarte util, recomand.",
+    feedback_date: ISODate("2023-06-09T15:30:00Z")
+  },
+  {
+    customer_id: 9,
+    order_id: 9,
+    product_id: 8,
+    rating: 5,
+    comment: "Ambalaj excelent și produs de calitate.",
+    feedback_date: ISODate("2023-06-10T17:00:00Z")
+  },
+  {
+    customer_id: 10,
+    order_id: 10,
+    product_id: 9,
+    rating: 4,
+    comment: "Bun raport calitate-preț.",
+    feedback_date: ISODate("2023-06-11T10:20:00Z")
+  },
+  {
+    customer_id: 11,
+    order_id: 11,
+    product_id: 10,
+    rating: 3,
+    comment: "Așteptam performanțe mai bune.",
+    feedback_date: ISODate("2023-06-12T09:45:00Z")
+  },
+  {
+    customer_id: 12,
+    order_id: 12,
+    product_id: 11,
+    rating: 4,
+    comment: "Util și eficient.",
+    feedback_date: ISODate("2023-06-13T11:30:00Z")
+  },
+  {
+    customer_id: 13,
+    order_id: 13,
+    product_id: 12,
+    rating: 5,
+    comment: "Excepțional, recomand cu încredere.",
+    feedback_date: ISODate("2023-06-14T14:15:00Z")
+  },
+  {
+    customer_id: 14,
+    order_id: 14,
+    product_id: 13,
+    rating: 4,
+    comment: "Bun produs, dar se poate îmbunătăți.",
+    feedback_date: ISODate("2023-06-15T16:40:00Z")
+  },
+  {
+    customer_id: 15,
+    order_id: 15,
+    product_id: 14,
+    rating: 5,
+    comment: "Foarte mulțumit de achiziție.",
+    feedback_date: ISODate("2023-06-16T10:30:00Z")
+  },
+  {
+    customer_id: 16,
+    order_id: 16,
+    product_id: 15,
+    rating: 4,
+    comment: "Produs de calitate, livrare promptă.",
+    feedback_date: ISODate("2023-06-17T13:50:00Z")
+  },
+  {
+    customer_id: 17,
+    order_id: 17,
+    product_id: 16,
+    rating: 3,
+    comment: "A fost mediocru.",
+    feedback_date: ISODate("2023-06-18T15:10:00Z")
+  },
+  {
+    customer_id: 18,
+    order_id: 18,
+    product_id: 17,
+    rating: 4,
+    comment: "Calitate bună, recomand.",
+    feedback_date: ISODate("2023-06-19T09:00:00Z")
+  },
+  {
+    customer_id: 19,
+    order_id: 19,
+    product_id: 18,
+    rating: 2,
+    comment: "Nesatisfăcător, se pot îmbunătăți unele aspecte.",
+    feedback_date: ISODate("2023-06-20T11:30:00Z")
+  },
+  {
+    customer_id: 20,
+    order_id: 20,
+    product_id: 19,
+    rating: 5,
+    comment: "Excelent, experiență de top!",
+    feedback_date: ISODate("2023-06-21T14:00:00Z")
+  }
+]);
+
+// Inserare în colecția "user_interactions" (20 de documente)
+db.user_interactions.insertMany([
+  {
+    customer_id: 1,
+    event_type: "page_view",
+    page: "homepage",
+    timestamp: ISODate("2023-06-01T09:50:00Z")
+  },
+  {
+    customer_id: 2,
+    event_type: "click",
+    page: "product_page",
+    timestamp: ISODate("2023-06-02T10:05:00Z")
+  },
+  {
+    customer_id: 3,
+    event_type: "page_view",
+    page: "category_electronice",
+    timestamp: ISODate("2023-06-03T09:00:00Z")
+  },
+  {
+    customer_id: 4,
+    event_type: "add_to_cart",
+    page: "product_page",
+    timestamp: ISODate("2023-06-04T14:30:00Z")
+  },
+  {
+    customer_id: 5,
+    event_type: "purchase",
+    page: "checkout",
+    timestamp: ISODate("2023-06-05T16:10:00Z")
+  },
+  {
+    customer_id: 6,
+    event_type: "page_view",
+    page: "homepage",
+    timestamp: ISODate("2023-06-06T08:45:00Z")
+  },
+  {
+    customer_id: 7,
+    event_type: "click",
+    page: "category_office",
+    timestamp: ISODate("2023-06-07T12:00:00Z")
+  },
+  {
+    customer_id: 8,
+    event_type: "add_to_cart",
+    page: "product_page",
+    timestamp: ISODate("2023-06-08T15:15:00Z")
+  },
+  {
+    customer_id: 9,
+    event_type: "purchase",
+    page: "checkout",
+    timestamp: ISODate("2023-06-09T16:50:00Z")
+  },
+  {
+    customer_id: 10,
+    event_type: "page_view",
+    page: "homepage",
+    timestamp: ISODate("2023-06-10T10:15:00Z")
+  },
+  {
+    customer_id: 11,
+    event_type: "click",
+    page: "product_page",
+    timestamp: ISODate("2023-06-11T09:40:00Z")
+  },
+  {
+    customer_id: 12,
+    event_type: "add_to_cart",
+    page: "category_calculatoare",
+    timestamp: ISODate("2023-06-12T11:20:00Z")
+  },
+  {
+    customer_id: 13,
+    event_type: "purchase",
+    page: "checkout",
+    timestamp: ISODate("2023-06-13T14:05:00Z")
+  },
+  {
+    customer_id: 14,
+    event_type: "page_view",
+    page: "product_page",
+    timestamp: ISODate("2023-06-14T16:30:00Z")
+  },
+  {
+    customer_id: 15,
+    event_type: "click",
+    page: "category_accessorii",
+    timestamp: ISODate("2023-06-15T10:25:00Z")
+  },
+  {
+    customer_id: 16,
+    event_type: "add_to_cart",
+    page: "product_page",
+    timestamp: ISODate("2023-06-16T13:10:00Z")
+  },
+  {
+    customer_id: 17,
+    event_type: "purchase",
+    page: "checkout",
+    timestamp: ISODate("2023-06-17T15:05:00Z")
+  },
+  {
+    customer_id: 18,
+    event_type: "page_view",
+    page: "homepage",
+    timestamp: ISODate("2023-06-18T09:35:00Z")
+  },
+  {
+    customer_id: 19,
+    event_type: "click",
+    page: "product_page",
+    timestamp: ISODate("2023-06-19T11:00:00Z")
+  },
+  {
+    customer_id: 20,
+    event_type: "add_to_cart",
+    page: "category_electronice",
+    timestamp: ISODate("2023-06-20T14:15:00Z")
+  }
+]);
